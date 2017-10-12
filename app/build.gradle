@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
     defaultConfig {
         applicationId "com.example.com.sightsofegypt"
-        minSdkVersion 19
-        targetSdkVersion 26
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -21,8 +21,31 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // android support libraries
+    implementation "com.android.support:appcompat-v7:${versions.supportLibrary}"
+    implementation "com.android.support:recyclerview-v7:${versions.supportLibrary}"
+    implementation "com.android.support:design:${versions.supportLibrary}"
+    implementation "com.android.support:support-vector-drawable:${versions.supportLibrary}"
+
+    implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
+
+    // code generator for view
+    compile "com.jakewharton:butterknife:${versions.butterKnife}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterKnife}"
+
+    // image
+    implementation "com.github.bumptech.glide:glide:${versions.glide}"
+
+    // network
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "com.amitshekhar.android:rx2-android-networking:${versions.rx2Networking}"
+
+    // font
+    implementation "uk.co.chrisjenx:calligraphy:${versions.calligraphy}"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
