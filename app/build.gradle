@@ -31,6 +31,7 @@ dependencies {
     implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
 
     // code generator for view
+    implementation 'com.android.support:support-v4:26.1.0'
     compile "com.jakewharton:butterknife:${versions.butterKnife}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterKnife}"
 

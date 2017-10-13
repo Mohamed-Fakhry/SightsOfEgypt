@@ -1,7 +1,7 @@
 package com.example.com.sightsofegypt.model;
 
 
-class SightImage {
+public class SightImage {
 
     private int width;
     private int height;

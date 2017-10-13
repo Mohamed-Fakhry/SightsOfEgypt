@@ -9,6 +9,7 @@ import com.example.com.sightsofegypt.service.Service;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
 public class App extends Application {
 
@@ -40,10 +41,9 @@ public class App extends Application {
     }
 
     private void initCalligraphyConfig() {
-//        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
-//                .setDefaultFontPath(getString(R.string.font_name))
-//                .setFontAttrId(R.attr.fontPath)
-//                .build());
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setFontAttrId(R.attr.fontPath)
+                .build());
     }
 
 }

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SightsActivity">
+        <activity android:name=".ui.sight.SightsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
