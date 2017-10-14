@@ -4,9 +4,9 @@ package com.example.com.sightsofegypt.ui.base;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
+import com.example.com.sightsofegypt.data.model.Sight;
 
-    private int mCurrentPosition;
+public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     public BaseViewHolder(View itemView) {
         super(itemView);
@@ -14,12 +14,7 @@ public abstract class BaseViewHolder extends RecyclerView.ViewHolder {
 
     protected abstract void clear();
 
-    public void onBind(int position) {
-        mCurrentPosition = position;
+    public void onBind(Sight sight) {
         clear();
-    }
-
-    public int getCurrentPosition() {
-        return mCurrentPosition;
     }
 }

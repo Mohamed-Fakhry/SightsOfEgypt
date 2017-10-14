@@ -13,6 +13,9 @@ buildscript {
             'glide'           : '3.7.0',
             'retrofit'        : '2.3.0',
             'okhttp'          : '3.8.1',
+            'volley'          : '1.0.0',
+            'glide_volley_int': '1.5.0@aar',
+            'greendao'        : '3.2.2',
             'rx2Networking'   : '1.0.0',
             'calligraphy'     : '2.3.0',
             'junit'           : '4.12'
@@ -24,7 +27,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-beta7'
-
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.1'
     }
 }
 

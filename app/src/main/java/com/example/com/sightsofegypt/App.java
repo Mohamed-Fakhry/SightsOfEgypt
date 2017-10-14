@@ -3,8 +3,10 @@ package com.example.com.sightsofegypt;
 import android.app.Application;
 
 import com.androidnetworking.interceptors.HttpLoggingInterceptor;
-import com.example.com.sightsofegypt.service.Constant;
-import com.example.com.sightsofegypt.service.Service;
+import com.example.com.sightsofegypt.data.api.Constant;
+import com.example.com.sightsofegypt.data.api.Service;
+import com.example.com.sightsofegypt.data.model.DaoMaster;
+import com.example.com.sightsofegypt.data.model.DaoSession;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -14,12 +16,15 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class App extends Application {
 
     public static Service service;
+    public static DaoSession mDaoSession;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-//        initCalligraphyConfig();
+        mDaoSession = new DaoMaster(
+                new DaoMaster.DevOpenHelper(this, "sights.db").getWritableDb()).newSession();
+
         createApi();
     }
 
@@ -45,5 +50,4 @@ public class App extends Application {
                 .setFontAttrId(R.attr.fontPath)
                 .build());
     }
-
 }

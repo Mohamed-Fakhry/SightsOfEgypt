@@ -8,11 +8,18 @@ import com.example.com.sightsofegypt.R;
 
 public final class ActivityUtils {
 
-    private ActivityUtils() {}
+    private ActivityUtils() {
+    }
 
-    void addFragmentToActivity(FragmentManager fragmentManager, Fragment fragment) {
+    public static void addFragmentToActivity(FragmentManager fragmentManager, Fragment fragment) {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.container, fragment);
+        transaction.commit();
+    }
+
+    public static void addFragmentToActivity(int containerId, FragmentManager fragmentManager, Fragment fragment) {
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(containerId, fragment);
         transaction.commit();
     }
 }

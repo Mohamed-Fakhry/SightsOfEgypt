@@ -1,19 +1,19 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.com.sightsofegypt.ui.custom.InteractiveScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.com.sightsofegypt.ui.sight.SightFragment">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/featuredTV"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/featured"
@@ -43,7 +43,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/exploreTV"
-            android:padding="16dp"
-            tools:listitem="@layout/item_explore"/>
+            android:padding="8dp"
+            tools:listitem="@layout/item_explore" />
+
+        <ProgressBar
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_below="@+id/exploreRV"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp" />
     </RelativeLayout>
-</ScrollView>
+</com.example.com.sightsofegypt.ui.custom.InteractiveScrollView>
